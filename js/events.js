@@ -4,6 +4,8 @@ function toggleMedia(event) {
         showMirror(event.currentSlide);
     } else if (event.currentSlide.id === "microphone") {
         showAudio(event.currentSlide);
+    } else if (event.currentSlide.id === "big-brother") {
+        initWebRTC();
     }
 
     if (typeof currentVideoTrack !== "undefined") {
