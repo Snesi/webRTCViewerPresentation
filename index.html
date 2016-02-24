@@ -55,19 +55,14 @@
 					<h3>
 						David G. Shannon
 					</h3>
-                    <ul>
-                        <li>Full Stack</li>
-                        <li>Geek</li>
-                        <li>Cinéfilo</li>
-                        <li>Fan de gatos</li>
-                    </ul>
+                    <small><a href="https://github.com/Snesi">Snesi</a> / <a href="https://twitter.com/davidgshannon">@davidgshannon</a></small>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
-                    <h2>Qué es webRTC?</h2>
+                    <h2>What is webRTC?</h2>
                     <h3>Plugin-free realtime communication</h3>
-                    <p>En resumen, tres APIs del navegador que permiten p2p entre browsers</p>
+                    <p>Three APIs that allow p2p browser communication</p>
                     <ul>
                         <li>MediaStream (aka getUserMedia)</li>
                         <li>RTCPeerConnection</li>
@@ -75,81 +70,36 @@
                     </ul>
 				</section>
 
-				<section>
-					<h2>Compatibilidad?</h2>
-                    <table>
-                        <thead>
-                            <tr><td>SÍ</td><td>NO</td></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><img src="images/yes-compatible.gif" alt=""></td>
-                                <td><img src="images/no-compatible.gif" alt=""></td>
-                            </tr>
-                        </tbody>
-                    </table>
+				<section data-background="images/yes-compatible.gif" class="webrtc">
+					<h2>YES!!!</h2>
+				</section>
+                <section data-background="images/no-compatible.gif" class="no-webrtc">
+					<h2>No...</h2>
 				</section>
 
 				<section>
-					<h2>Cómo funciona?</h2>
+					<h2>How does it work?</h2>
 				</section>
-
 				<section>
 					<h2>MediaStream</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-navigator.getUserMedia()
-					</code></pre>
-                    <img src="images/mediaStream.png" alt="">
-				</section>
-                <section>
-					<h2>MediaStream</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-// Mr. Browser: Qué quieres captar?
-var constraints = {video: true};
-// Mr. Browser: Qué hago una vez te lo dé?
-function successCallback(stream) {
-  var video = document.querySelector("video");
-  video.src = window.URL.createObjectURL(stream);
-}
-// Mr. Browser: Qué hago si no puedo dartelo?
-function errorCallback(error) {
-  console.log("navigator.getUserMedia error: ", error);
-}
-// Mr. Browser: Pídeme lo que quieres amorsito
-navigator.getUserMedia(constraints, successCallback, errorCallback);
-					</code></pre>
+					<p>This is your browser (Mr. B) speaking... look at the main screen, there's nothing here to see.</p>
 				</section>
 				<section id="mirror" class="webrtc">
-					<h2>Mr. B: Oh! qué guapo eres!!</h2>
+					<h2>Mr. B: Oh! You are such a beauty!!</h2>
                     <div class="stretch">
                         <video class="video-mirror" id="mirror-success" src=""></video>    
                     </div>
-                    
-                    <img id="mirror-failed" src="" alt="" style="display: none">
 				</section>
                 <section data-background="images/failed-mirror.gif" class="no-webrtc">
-					<h2>Mr. B: No te veo...</h2>
+					<h2>Mr. B: Can't see you...</h2>
 				</section>
                 
                 <section>
 					<h2>MediaStream</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-// Success callback when requesting audio input stream
-function gotStream(stream) {
-    var audioContext = new AudioContext();
-
-    // Create an AudioNode from the stream
-    var mediaStreamSource = audioContext.createMediaStreamSource(stream);
-
-    // Connect it to the destination or any other node for processing!
-    mediaStreamSource.connect(audioContext.destination);
-}
-
-navigator.getUserMedia({audio:true}, gotStream);
-					</code></pre>
+					<p>Mr. B: Nothing to see here either...</p>
 				</section>
                 <section id="microphone" class="webrtc">
-					<h2>Mr. B: MotherOFGod! qué voz tan bonita!</h2>
+					<h2>Mr. B: MotherOFGod! what a voice!</h2>
                     <div class="stretch">
                         <div id="meters">
                             <div id="instant">
@@ -177,30 +127,13 @@ navigator.getUserMedia({audio:true}, gotStream);
                 <section>
 					<h2>RTCPeerConnection</h2>
 				</section>
-                <section>
+                <section id="peer-sample">
 					<h2>RTCPeerConnection Sample</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-pc = new RTCPeerConnection(null);
-pc.onaddstream = gotRemoteStream;
-pc.addStream(localStream);
-pc.createOffer(gotOffer);
-
-function gotOffer(desc) {
-  pc.setLocalDescription(desc);
-  sendOffer(desc);
-}
-
-function gotAnswer(desc) {
-  pc.setRemoteDescription(desc);
-}
-
-function gotRemoteStream(e) {
-  attachMediaStream(remoteVideo, e.stream);
-}
-					</code></pre>
+					<p>Mr. B: Blablabla, technical stuff... just ignore him...</p>
+                    <p>Mr. B: Want to go to your facebook? <a href="javascript:var p = document.createElement('p'); p.innerText = 'LOL'; document.getElementById('peer-sample').appendChild(p)">Click here</p>
 				</section>
                 <section>
-					<h2>Hello Broadcaster</h2>
+					<h2>Hello Big-Brotha</h2>
                     <video class="video-mirror" id="broadcaster" src="" autoplay></video>
 				</section>
 			</div>
