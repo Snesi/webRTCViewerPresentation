@@ -12,9 +12,10 @@ function initSlides() {
     }
 }
 
-
+var viewer,
+    broadcaster;
 function initWebRTC() {
-    var viewer = PHONE({
+    viewer = PHONE({
         number: "VIEWER-" + new Date,
         publish_key   : 'pub-c-f9b642ff-c435-4519-b121-78d72a7b4c5e',
         subscribe_key : 'sub-c-3e8402ec-d9a1-11e5-8758-02ee2ddab7fe',
@@ -26,7 +27,7 @@ function initWebRTC() {
     // Join a Broadcast as a Viewer
     // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     viewer.ready(function () {
-        var broadcaster = viewer.dial("BROADCASTER");
+        broadcaster = viewer.dial("BROADCASTER");
         broadcaster.send("Lol");
     });
 
@@ -38,7 +39,7 @@ function initWebRTC() {
             document.getElementById("broadcaster").src = broadcaster.video.src;
         });
         broadcaster.ended(function (broadcaster) { /* broadcast ended */ });
-        
+
     });
 }
 
