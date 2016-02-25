@@ -1,213 +1,213 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>WebRTC</title>
+    <title>WebRTC</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-        
-        <link rel="stylesheet" href="css/styles.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    </script>
 
-		<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>WebRTC</h1>
-					<h3>Browser Peer 2 Peer with no plugins</h3>
-					<p>
-						<small>Created by <a href="https://github.com/Snesi">David G. Shannon</a> / <a href="https://twitter.com/davidgshannon">@davidgshannon</a></small>
-					</p>
-				</section>
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>WebRTC</h1>
+                <h3>Browser Peer 2 Peer with no plugins</h3>
+                <p>
+                    <small>Created by <a href="https://github.com/Snesi">David G. Shannon</a> / <a href="https://twitter.com/davidgshannon">@davidgshannon</a></small>
+                </p>
+            </section>
 
-				<section>
-					<h2 style="text-transform: lowercase">whoami</h2>
-					<h3>
+            <section>
+                <h2 style="text-transform: lowercase">whoami</h2>
+                <h3>
 						David G. Shannon
 					</h3>
-                    <small><a href="https://github.com/Snesi">Snesi</a> / <a href="https://twitter.com/davidgshannon">@davidgshannon</a></small>
-				</section>
+                <small><a href="https://github.com/Snesi">Snesi</a> / <a href="https://twitter.com/davidgshannon">@davidgshannon</a></small>
+            </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-                    <h2>What is webRTC?</h2>
-                    <h3>Plugin-free realtime communication</h3>
-                    <p>Three APIs that allow p2p browser communication</p>
-                    <ul>
-                        <li>MediaStream (aka getUserMedia)</li>
-                        <li>RTCPeerConnection</li>
-                        <li>RTCDataChannel</li>
-                    </ul>
-				</section>
+            <!-- Example of nested vertical slides -->
+            <section>
+                <h2>What is webRTC?</h2>
+                <h3>Plugin-free realtime communication</h3>
+                <p>Three APIs that allow p2p browser communication</p>
+                <ul>
+                    <li>MediaStream (aka getUserMedia)</li>
+                    <li>RTCPeerConnection</li>
+                    <li>RTCDataChannel</li>
+                </ul>
+            </section>
 
-				<section data-background="images/yes-compatible.gif" class="webrtc">
-					<h2 style="color: white">YES!!!</h2>
-				</section>
-                <section data-background="images/no-compatible.gif" class="no-webrtc">
-					<h2 style="color: white">No...</h2>
-				</section>
+            <section data-background="images/yes-compatible.gif" class="webrtc">
+                <h2 style="color: white">YES!!!</h2>
+            </section>
+            <section data-background="images/no-compatible.gif" class="no-webrtc">
+                <h2 style="color: white">No...</h2>
+            </section>
 
-				<section>
-					<h2>How does it work?</h2>
-				</section>
-                <section>
-					<h2>MediaStream</h2>
-                    <img src="images/mediaStream.png" alt="">
-				</section>
-				<section>
-					<h2>MediaStream</h2>
-					<p>This is your browser (Mr. B) speaking... look at the main screen, there's nothing here to see.</p>
-				</section>
-				<section id="mirror" class="webrtc">
-					<h2>Mr. B: Oh! You are such a beauty!!</h2>
-                    <div class="stretch">
-                        <video class="video-mirror" id="mirror-success" src=""></video>    
+            <section>
+                <h2>How does it work?</h2>
+            </section>
+            <section>
+                <h2>MediaStream</h2>
+                <img src="images/mediaStream.png" alt="">
+            </section>
+            <section>
+                <h2>MediaStream</h2>
+                <p>This is your browser (Mr. B) speaking... look at the main screen, there's nothing here to see.</p>
+            </section>
+            <section id="mirror" class="webrtc">
+                <h2>Mr. B: Oh! You are such a beauty!!</h2>
+                <div class="stretch">
+                    <video class="video-mirror" id="mirror-success" src=""></video>
+                </div>
+            </section>
+            <section data-background="images/failed-mirror.gif" class="no-webrtc">
+                <h2>Mr. B: Can't see you...</h2>
+            </section>
+
+            <section>
+                <h2>MediaStream</h2>
+                <p>Mr. B: Nothing to see here either...</p>
+            </section>
+            <section id="microphone" class="webrtc">
+                <h2>Mr. B: MotherOFGod! what a voice!</h2>
+                <div class="stretch">
+                    <div id="meters">
+                        <div id="instant">
+                            <div class="label">Instant: </div>
+                            <meter high="0.25" max="1" value="0"></meter>
+                            <div class="value"></div>
+                        </div>
+                        <div id="slow">
+                            <div class="label">Slow: </div>
+                            <meter high="0.25" max="1" value="0"></meter>
+                            <div class="value"></div>
+                        </div>
+                        <div id="clip">
+                            <div class="label">Clip: </div>
+                            <meter max="1" value="0"></meter>
+                            <div class="value"></div>
+                        </div>
                     </div>
-				</section>
-                <section data-background="images/failed-mirror.gif" class="no-webrtc">
-					<h2>Mr. B: Can't see you...</h2>
-				</section>
-                
-                <section>
-					<h2>MediaStream</h2>
-					<p>Mr. B: Nothing to see here either...</p>
-				</section>
-                <section id="microphone" class="webrtc">
-					<h2>Mr. B: MotherOFGod! what a voice!</h2>
-                    <div class="stretch">
-                        <div id="meters">
-                            <div id="instant">
-                                <div class="label">Instant: </div>
-                                <meter high="0.25" max="1" value="0"></meter>
-                                <div class="value"></div>
-                            </div>
-                            <div id="slow">
-                                <div class="label">Slow: </div>
-                                <meter high="0.25" max="1" value="0"></meter>
-                                <div class="value"></div>
-                            </div>
-                            <div id="clip">
-                                <div class="label">Clip: </div>
-                                <meter max="1" value="0"></meter>
-                                <div class="value"></div>
-                            </div>
-                        </div>  
-                    </div>
-				</section>
-                <section class="no-webrtc" data-background="images/failed-microphone.gif">
-					<h2>Mr. B: Hello...? It's me...</h2>
-				</section>
-                
-                <section>
-					<h2>RTCPeerConnection</h2>
-				</section>
-                <section id="peer-sample">
-					<h2>RTCPeerConnection Sample</h2>
-					<p>Mr. B: Blablabla, technical stuff... just ignore him...</p>
-                    <p>Mr. B: Want to go to your facebook? <a href="javascript:var p = document.createElement('p'); p.innerText = 'LOL'; document.getElementById('peer-sample').appendChild(p)">Click here</a></p>
-				</section>
-                <section id="big-brother" class="webrtc">
-					<h2>Mr B: Hello Big-Brotha!</h2>
-                    <video class="video-mirror" id="broadcaster" src="" autoplay></video>
-				</section>
-                <section id="big-brother" class="no-webrtc" data-background="images/chillin.gif">
-					<h2>...</h2>
-				</section>
-                <section>
-                    <h2>Who uses WebRTC?</h2>
-                    <ul>
-                        <li>Google</li>
-                        <li>Facebook</li>
-                        <li>Citrix</li>
-                        <li>Tokbox</li>
-                        <li>Twilio</li>
-                        <li>Amazon</li>
-                        <li>Comcast</li>
-                        <li>Oracle</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>How does it work?</h2>
-                    <img src="images/jsep.png" alt="" class="stretch">
-                </section>
-                <section>
-                    <h2>Browser internals</h2>
-                    <img src="images/webrtcArchitecture.png" alt="" class="stretch">
-                </section>
-                <section>
-                    <h2>Getting IP from STUN Servers</h2>
-                    <img src="images/stun.png" alt="" class="stretch">
-                </section>
-                <section>
-                    <h2>Establishing conexion</h2>
-                    <img src="images/dataPathways.png" alt="" class="stretch">
-                </section>
-                <section data-background="images/magic.gif">
-                    
-                </section>
-                <section>
-                    <h2>What's next?</h2>
-                    <p>...porn</p>
-                </section>
-                <section data-background="images/tethr.jpg">
-                </section>
-                <section>
-                    <h2>Slides hosted on</h2>
-                    <p>
-                        <a href="https://github.com/Snesi/webRTCPresentation">webRTCPresentation</a>
-                    </p>
-                    <p>
-                        <a href="https://github.com/Snesi/webRTCViewerPresentation">webRTCViewerPresentation</a>
-                    </p>
-                </section>
-			</div>
-		</div>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-        <script src="js/getusermedia.bundle.js"></script>
-        <script src="https://cdn.pubnub.com/pubnub-3.10.3.js"></script>
-        <script src="js/webrtc.js"></script>
-        <script src="js/initmirror.js"></script>
-        <script src="js/soundmeter.js"></script>
-        <script src="js/initaudio.js"></script>
-        <script src="js/initWebRTC.js"></script>
-        <script src="js/events.js"></script>
-        <script src="js/main.js"></script>
-        
-        
+                </div>
+            </section>
+            <section class="no-webrtc" data-background="images/failed-microphone.gif">
+                <h2>Mr. B: Hello...? It's me...</h2>
+            </section>
 
-		<script>
-            initSlides();
+            <section>
+                <h2>RTCPeerConnection</h2>
+            </section>
+            <section id="peer-sample">
+                <h2>RTCPeerConnection Sample</h2>
+                <p>Mr. B: Blablabla, technical stuff... just ignore him...</p>
+                <p>Mr. B: Want to go to your facebook? <a href="javascript:var p = document.createElement('p'); p.innerText = 'LOL'; document.getElementById('peer-sample').appendChild(p)">Click here</a></p>
+            </section>
+            <section id="big-brother" class="webrtc">
+                <h2>Mr B: Hello Big-Brotha!</h2>
+                <video class="video-mirror" id="broadcaster" src="" autoplay></video>
+            </section>
+            <section id="big-brother" class="no-webrtc" data-background="images/chillin.gif">
+                <h2>...</h2>
+            </section>
+            <section>
+                <h2>Who uses WebRTC?</h2>
+                <ul>
+                    <li>Google</li>
+                    <li>Facebook</li>
+                    <li>Citrix</li>
+                    <li>Tokbox</li>
+                    <li>Twilio</li>
+                    <li>Amazon</li>
+                    <li>Comcast</li>
+                    <li>Oracle</li>
+                </ul>
+            </section>
+            <section>
+                <h2>How does it work?</h2>
+                <img src="images/jsep.png" alt="" class="stretch">
+            </section>
+            <section>
+                <h2>Browser internals</h2>
+                <img src="images/webrtcArchitecture.png" alt="" class="stretch">
+            </section>
+            <section>
+                <h2>Getting IP from STUN Servers</h2>
+                <img src="images/stun.png" alt="" class="stretch">
+            </section>
+            <section>
+                <h2>Establishing conexion</h2>
+                <img src="images/dataPathways.png" alt="" class="stretch">
+            </section>
+            <section data-background="images/magic.gif">
+
+            </section>
+            <section>
+                <h2>What's next?</h2>
+                <p>...porn</p>
+            </section>
+            <section data-background="images/tethr.jpg">
+            </section>
+            <section>
+                <h2>Slides hosted on</h2>
+                <p>
+                    <a href="https://github.com/Snesi/webRTCPresentation">webRTCPresentation</a>
+                </p>
+                <p>
+                    <a href="https://github.com/Snesi/webRTCViewerPresentation">webRTCViewerPresentation</a>
+                </p>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/getusermedia.bundle.js"></script>
+    <script src="https://cdn.pubnub.com/pubnub-3.10.3.js"></script>
+    <script src="js/webrtc.js"></script>
+    <script src="js/initmirror.js"></script>
+    <script src="js/soundmeter.js"></script>
+    <script src="js/initaudio.js"></script>
+    <script src="js/initWebRTC.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+    <script>
+        initSlides();
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -217,18 +217,9 @@
 				center: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
-				multiplex: {
-			        // Example values. To generate your own, see the socket.io server instructions.
-			        secret: null, // Obtained from the socket.io server. Gives this (the master) control of the presentation
-			        id: 'c21bde26453a6e2d', // Obtained from socket.io server
-			        url: 'https://epicdavid.com:8888' // Location of socket.io server
-			    },
 
 				// Optional reveal.js plugins
 				dependencies: [
-					{ src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
-        			{ src: 'plugin/multiplex/client.js', async: true },
-
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -238,9 +229,32 @@
 				]
 			});
             
+            var PUBNUB_demo = PUBNUB.init({
+                publish_key   : 'pub-c-f9b642ff-c435-4519-b121-78d72a7b4c5e',
+                subscribe_key : 'sub-c-3e8402ec-d9a1-11e5-8758-02ee2ddab7fe',
+            });
+            
+            PUBNUB_demo.subscribe({
+                channel: 'webrtc',
+                message: function(m){
+                    console.log(m)
+                    if(m.event && m.event === "slidechanged") {
+                        if(m.msg && m.msg.slide) {
+                            Reveal.slide(m.msg.slide);
+                        }
+                    }
+                }
+            });
+            
             Reveal.addEventListener('slidechanged', toggleMedia);
+            Reveal.addEventListener('slidechanged', function(event) {
+                PUBNUB_demo.publish({
+                    channel: 'webrtc',
+                    message: {"color":"blue"}
+                });
+            });
+    </script>
 
-		</script>
+</body>
 
-	</body>
 </html>
