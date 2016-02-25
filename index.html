@@ -211,7 +211,7 @@
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
@@ -232,6 +232,7 @@
             var PUBNUB_demo = PUBNUB.init({
                 publish_key   : 'pub-c-f9b642ff-c435-4519-b121-78d72a7b4c5e',
                 subscribe_key : 'sub-c-3e8402ec-d9a1-11e5-8758-02ee2ddab7fe',
+                ssl: (('https:' == document.location.protocol) ? true : false)
             });
             
             PUBNUB_demo.subscribe({
